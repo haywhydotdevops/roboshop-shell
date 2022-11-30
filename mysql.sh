@@ -44,7 +44,6 @@ else
 fi
 
 
-
 echo show databases | mysql -uroot -p${ROBOSHOP_MYSQL_PASSWORD}
 if [ $? -ne 0 ]
 then
