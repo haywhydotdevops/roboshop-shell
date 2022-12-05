@@ -60,11 +60,11 @@ NODEJS() {
   systemctl daemon-reload &>>$LOG
   STAT $?
 
-  PRINT "Restart Cart"
+  PRINT "Restart ${COMPONENT}"
   systemctl restart ${COMPONENT} &>>$LOG
   STAT $?
 
-  PRINT "Enable Cart Service"
+  PRINT "Enable ${COMPONENT} Service"
   systemctl enable ${COMPONENT} &>>$LOG
   STAT $?
 }
