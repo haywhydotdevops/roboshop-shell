@@ -39,6 +39,7 @@ NODEJS() {
   PRINT "Remove Previous Version of App"
   cd /home/roboshop &>>$LOG
   rm -rf ${COMPONENT} &>>$LOG
+  STAT $?
 
   PRINT "Extracting App Content"
   unzip -o /tmp/${COMPONENT}.zip &>>$LOG
