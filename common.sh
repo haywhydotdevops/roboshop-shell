@@ -44,7 +44,7 @@ NODEJS() {
   unzip -o /tmp/${COMPONENT}.zip &>>$LOG
   STAT $?
 
-  mv ${COMPONENT}-main cart
+  mv ${COMPONENT}-main ${COMPONENT}
   cd ${COMPONENT}
 
   PRINT "Install NodeJS Dependencies for App"
