@@ -37,6 +37,7 @@ DOWNLOAD_APP_CODE() {
   PRINT "Extracting App Content"
   unzip -o /tmp/${COMPONENT}.zip &>>$LOG
   STAT $?
+
 }
 
 SYSTEMD_SETUP() {
