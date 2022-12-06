@@ -21,7 +21,7 @@ DOWNLOAD_APP_CODE() {
   PRINT "Adding Application User"
   id roboshop &>>$LOG
   if [ $? -ne 0 ]; then
-    useradd roboshop &>>$LOG
+  useradd roboshop &>>$LOG
   fi
   STAT $?
 
