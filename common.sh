@@ -49,18 +49,7 @@ NODEJS() {
   fi
   STAT $?
 
-  PRINT "DOWNLOAD App Content"
-  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
-  STAT $?
-
-  PRINT "Remove Previous Version of App"
-  cd /home/roboshop &>>$LOG
-  rm -rf ${COMPONENT} &>>$LOG
-  STAT $?
-
-  PRINT "Extracting App Content"
-  unzip -o /tmp/${COMPONENT}.zip &>>$LOG
-  STAT $?
+DOWNLOAD_APP_CODE
 
   mv ${COMPONENT}-main ${COMPONENT}
   cd ${COMPONENT}
