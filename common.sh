@@ -71,7 +71,6 @@ NODEJS() {
   STAT $?
 
 
-
 DOWNLOAD_APP_CODE
 
   mv ${COMPONENT}-main ${COMPONENT}
@@ -81,7 +80,7 @@ DOWNLOAD_APP_CODE
   npm install &>>$LOG
   STAT $?
 
-  SYSTEMD
+  SYSTEMD_SETUP
 
 }
 
