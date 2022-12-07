@@ -17,27 +17,26 @@ LOG=/tmp/$COMPONENT.log
 rm -f $LOG
 
 DOWNLOAD_APP_CODE() {
-  if [! -z "$APP_USER"]; then
-  PRINT "Adding Application User"
-  id roboshop &>>$LOG
-  if [ $? -ne 0 ]; then
-  useradd roboshop &>>$LOG
-  fi
-  STAT $?
+   if [! -z "$APP_USER"]; then
+    PRINT "Adding Application User"
+    id roboshop &>>$LOG
+    if [ $? -ne 0 ]; then
+    useradd roboshop &>>$LOG
+    fi
+    STAT $?
 
-  PRINT "DOWNLOAD App Content"
-  curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/roboshop-devops-project/$COMPONENT/archive/main.zip" &>>$LOG
-  STAT $?
+    PRINT "DOWNLOAD App Content"
+    curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/roboshop-devops-project/$COMPONENT/archive/main.zip" &>>$LOG
+    STAT $?
 
-  PRINT "Remove Previous Version of App"
-  cd $APP_LOC &>>$LOG
-  rm -rf $CONTENT &>>$LOG
-  STAT $?
+    PRINT "Remove Previous Version of App"
+    cd $APP_LOC &>>$LOG
+    rm -rf $CONTENT &>>$LOG
+    STAT $?
 
-  PRINT "Extracting App Content"
-  unzip -o /tmp/${COMPONENT}.zip &>>$LOG
-  STAT $?
-
+    PRINT "Extracting App Content"
+    unzip -o /tmp/${COMPONENT}.zip &>>$LOG
+    STAT $?
 }
 
 SYSTEMD_SETUP() {
@@ -102,3 +101,4 @@ JAVA() {
 SYSTEMD_SETUP
 
 }
+
