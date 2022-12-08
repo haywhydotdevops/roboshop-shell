@@ -120,7 +120,7 @@ PYTHON() {
 
    USER_ID=$(id -u roboshop)
    GROUP_ID=$(id -g roboshop)
-   sed -e "/uid/ c uid = ${USER_ID}" -e "/uid/ c uid = ${GROUP_ID}" ${COMPONENT}.ini
+   sed -i -e "/uid/ c uid = ${USER_ID}" -e "/uid/ c uid = ${GROUP_ID}" ${COMPONENT}.ini
 
    SYSTEMD_SETUP
 
