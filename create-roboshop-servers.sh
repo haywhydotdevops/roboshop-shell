@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##### Change these values ###
-ZONE_ID="Z01286273G12DYGEIHIUI"
+ZONE_ID="Z03705691XFHWKJ3NVGGQ"
 SG_NAME="allow-all"
 #ENV="dev"
 #############################
